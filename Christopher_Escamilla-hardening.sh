@@ -46,17 +46,22 @@ if [[ $CENTOS = *7* ]]; then
     sudo rpm -ivh epel-release-latest-7.noarch.rpm
     echo "Verificaremos tu lista de repositorios"
     sudo yum -y repolist
+    
+    echo "Se verificarán las actualizaciones"
+    sleep 3
+    sudo yum list updates
+
+    echo "Se realizarán las actulizaciones correspondientes"
+    sleep 3
+    sudo yum -y update
+    echo "FAVOR DE REINICIAR EL SISTEMA"
+
+    echo "FIN DEL PROGRAMA"
+    clear
+else 
+    echo"No se instalara porque es UBUNTU"
+    clear
 fi
-
-
-echo "Se verificarán las actualizaciones"
-sleep 3
-sudo yum list updates
-
-echo "Se realizarán las actulizaciones correspondientes"
-sleep 3
-sudo yum -y update
-echo "FAVOR DE REINICIAR EL SISTEMA"
-
-echo "FIN DEL PROGRAMA"
 clear
+
+
